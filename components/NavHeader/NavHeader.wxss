@@ -1,0 +1,21 @@
+.header {
+  position      : relative;
+  display       : flex;
+  flex-direction: row;
+  margin-bottom : 20rpx;
+}
+
+.header .title {
+  float      : left;
+  font-size  : 32rpx;
+  line-height: 80rpx;
+}
+
+.header .img {
+  position: absolute;
+  top     : 25rpx;
+  right   : 10rpx;
+  display : block;
+  width   : 40rpx;
+  height  : 40rpx;
+}

@@ -1,0 +1,149 @@
+.indexContainer {
+
+    //轮播图
+    .banners {
+        width: 100%;
+        height: 300rpx;
+
+        image {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    //图标导航区域
+    .NavContainer {
+        display: flex;
+
+        .Navitem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 20%;
+
+            .iconfont {
+                width: 100rpx;
+                height: 100rpx;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 100rpx;
+                background-color: #A3BBDB;
+                font-size: 50rpx;
+                color: #fff;
+                margin: 20rpx 0;
+            }
+
+            text {
+                font-size: 26rpx;
+                font-family: "苹方";
+            }
+        }
+    }
+
+    //推荐歌曲(标题)
+    .recommendContainer {
+        padding: 20rpx;
+
+        .recommendScorll {
+            display: flex;
+            height: 300rpx;
+
+            .scrollItem {
+                width: 200rpx;
+                margin-right: 20rpx;
+
+                image {
+                    width: 200rpx;
+                    height: 200rpx;
+                    border-radius: 10rpx;
+                }
+
+                text {
+                    /*单行文本溢出*/
+                    // display: block;
+                    // font-size: 26rpx;
+                    // white-space: nowrap;
+                    // overflow: hidden;
+                    // text-overflow: ellipsis;
+
+                    // 多行文本溢出
+                    font-family: "苹方";
+                    font-size: 26rpx;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                }
+            }
+        }
+    }
+
+    //排行榜
+    .TopList {
+        padding: 20rpx;
+        background-color: #eaeef1;
+
+        .TopListSwiper {
+            margin-top: 10rpx;
+            height: 500rpx;
+
+            .swiperItem {
+                border-radius: 20rpx;
+                width: 96%;
+                background-color: #fff;
+
+                .title {
+                    font-family: "PingFangSC-Regular";
+                    margin-left: 30rpx;
+                    font-size: 30rpx;
+                    line-height: 80rpx;
+                }
+
+                .musicItem {
+                    margin-left: 30rpx;
+                    display: flex;
+                    flex-direction: row;
+                    padding-bottom: 20rpx;
+
+                    image {
+                        width: 100rpx;
+                        height: 100rpx;
+                        border-radius: 6rpx;
+                    }
+
+                    .Count {
+                        margin-left: -10rpx;
+                        width: 100rpx;
+                        height: 100rpx;
+                        text-align: center;
+                        line-height: 100rpx;
+                    }
+
+                    .TextStyle {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: -10rpx;
+
+                        .musicName {
+                            font-family: "苹方";
+                            font-size: 30rpx;
+                            margin-bottom: 10rpx;
+                            max-width: 400rpx;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        .SingerName {
+                            font-family: "华文楷体";
+                            font-size: 25rpx;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

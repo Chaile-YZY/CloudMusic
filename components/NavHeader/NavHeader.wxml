@@ -1,0 +1,5 @@
+<!-- components/NavHeader/NavHeader.wxml -->
+<view class="header">
+    <text class="title">{{title}}</text>
+    <image class="img" src="/static/images/tab/gengduo.png"></image>
+</view>

@@ -1,0 +1,28 @@
+<!-- pages/recommandSong/recommandSong.wxml -->
+<view class="recommandContainer">
+    <view class="header">
+        <image src="/static/images/recommendSong/xihu.jpg"></image>
+        <view class="date">
+            <text class="day">{{day}}/</text>
+            <text class="month">{{month}}</text>
+        </view>
+    </view>
+    <view class="listContainer">
+        <view class="listHeader">
+            <text class="iconfont  icon-bofang"></text>
+            <text class="txt">播放全部</text>
+            <text class="checkall">多选</text>
+        </view>
+    </view>
+    <!-- 内容区 -->
+    <scroll-view scroll-y="{{true}}" class="listScroll">
+        <view class="scrollItem" wx:for="{{recommendList}}" wx:key="id" data-index="{{index}}" data-song='{{item}}' bindtap="ToSongDetail">
+            <image src="{{item.al.picUrl}}"></image>
+            <view class="musicInfo">
+                <text class="musicName">{{item.name}}</text>
+                <text class="author">{{item.ar[0].name}}</text>
+            </view>
+            <text class="iconfont icon-gengduo"></text>
+        </view>
+    </scroll-view>
+</view>

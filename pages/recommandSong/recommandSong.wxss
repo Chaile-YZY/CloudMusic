@@ -1,0 +1,95 @@
+.recommandContainer .header {
+  width   : 100%;
+  height  : 400rpx;
+  position: relative;
+}
+
+.recommandContainer .header image {
+  position: absolute;
+  width   : 100%;
+  height  : 100%;
+}
+
+.recommandContainer .header .date {
+  position   : absolute;
+  left       : -50rpx;
+  bottom     : 20rpx;
+  width      : 300rpx;
+  height     : 100rpx;
+  text-align : center;
+  line-height: 100rpx;
+  color      : #fff;
+}
+
+.recommandContainer .header .date .day {
+  font-size: 50rpx;
+}
+
+.recommandContainer .header .date .month {
+  font-size: 30rpx;
+}
+
+.recommandContainer .listContainer {
+  position        : relative;
+  top             : -20px;
+  padding         : 0 20rpx;
+  border-radius   : 30rpx;
+  background-color: #fff;
+}
+
+.recommandContainer .listContainer .listHeader {
+  height     : 80rpx;
+  line-height: 80rpx;
+}
+
+.recommandContainer .listContainer .listHeader .iconfont {
+  font-size   : 30rpx;
+  margin-right: 10rpx;
+  color       : #b8cad5;
+}
+
+.recommandContainer .listContainer .listHeader .checkall {
+  float: right;
+}
+
+.recommandContainer .listScroll {
+  height: calc(100vh - 380rpx);
+}
+
+.recommandContainer .listScroll .scrollItem {
+  display      : flex;
+  position     : relative;
+  margin-left  : 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.recommandContainer .listScroll .scrollItem image {
+  width        : 80rpx;
+  height       : 80rpx;
+  border-radius: 10rpx;
+}
+
+.recommandContainer .listScroll .scrollItem .musicInfo {
+  display       : flex;
+  flex-direction: column;
+  margin-left   : 20rpx;
+}
+
+.recommandContainer .listScroll .scrollItem .musicInfo text {
+  height       : 40rpx;
+  line-height  : 40rpx;
+  font-size    : 24rpx;
+  max-width    : 500rpx;
+  white-space  : nowrap;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+}
+
+.recommandContainer .listScroll .scrollItem .iconfont {
+  position   : absolute;
+  right      : 0;
+  text-align : center;
+  width      : 80rpx;
+  height     : 80rpx;
+  line-height: 80rpx;
+}

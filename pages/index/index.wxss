@@ -1,0 +1,115 @@
+.indexContainer .banners {
+  width: 100%;
+  height: 300rpx;
+}
+.indexContainer .banners image {
+  height: 100%;
+  width: 100%;
+}
+.indexContainer .NavContainer {
+  display: flex;
+}
+.indexContainer .NavContainer .Navitem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+.indexContainer .NavContainer .Navitem .iconfont {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: #A3BBDB;
+  font-size: 50rpx;
+  color: #fff;
+  margin: 20rpx 0;
+}
+.indexContainer .NavContainer .Navitem text {
+  font-size: 26rpx;
+  font-family: "苹方";
+}
+.indexContainer .recommendContainer {
+  padding: 20rpx;
+}
+.indexContainer .recommendContainer .recommendScorll {
+  display: flex;
+  height: 300rpx;
+}
+.indexContainer .recommendContainer .recommendScorll .scrollItem {
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+.indexContainer .recommendContainer .recommendScorll .scrollItem image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.indexContainer .recommendContainer .recommendScorll .scrollItem text {
+  /*单行文本溢出*/
+  font-family: "苹方";
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.indexContainer .TopList {
+  padding: 20rpx;
+  background-color: #eaeef1;
+}
+.indexContainer .TopList .TopListSwiper {
+  margin-top: 10rpx;
+  height: 500rpx;
+}
+.indexContainer .TopList .TopListSwiper .swiperItem {
+  border-radius: 20rpx;
+  width: 96%;
+  background-color: #fff;
+}
+.indexContainer .TopList .TopListSwiper .swiperItem .title {
+  font-family: "PingFangSC-Regular";
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.indexContainer .TopList .TopListSwiper .swiperItem .musicItem {
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20rpx;
+}
+.indexContainer .TopList .TopListSwiper .swiperItem .musicItem image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 6rpx;
+}
+.indexContainer .TopList .TopListSwiper .swiperItem .musicItem .Count {
+  margin-left: -10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.indexContainer .TopList .TopListSwiper .swiperItem .musicItem .TextStyle {
+  display: flex;
+  flex-direction: column;
+  margin-left: -10rpx;
+}
+.indexContainer .TopList .TopListSwiper .swiperItem .musicItem .TextStyle .musicName {
+  font-family: "苹方";
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.indexContainer .TopList .TopListSwiper .swiperItem .musicItem .TextStyle .SingerName {
+  font-family: "华文楷体";
+  font-size: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

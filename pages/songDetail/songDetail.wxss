@@ -1,0 +1,182 @@
+.background_img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(30rpx) brightness(80%);
+  z-index: -1;
+}
+.songDetailContainer {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.songDetailContainer .author {
+  font-size: 30rpx;
+  margin: 5px auto;
+  font-family: "楷体";
+}
+.songDetailContainer .circle {
+  position: relative;
+  z-index: 100;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: #fff;
+  margin: 10rpx 0;
+}
+.songDetailContainer .needle {
+  position: relative;
+  z-index: 99;
+  left: 60rpx;
+  top: -40rpx;
+  width: 192rpx;
+  height: 274rpx;
+  transform-origin: 40rpx 0;
+  transform: rotate(-20deg);
+  transition: transform 1s;
+}
+.songDetailContainer .needleRotate {
+  transform: rotate(0deg);
+}
+.songDetailContainer .discAnimation {
+  animation: disc 5s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes disc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.songDetailContainer .disContainer {
+  position: relative;
+  top: -170rpx;
+  width: 598rpx;
+  height: 598rpx;
+}
+.songDetailContainer .disContainer .disc {
+  width: 598rpx;
+  height: 598rpx;
+}
+.songDetailContainer .disContainer .arimg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+}
+.songDetailContainer .progressControl {
+  position: absolute;
+  bottom: 200rpx;
+  width: 640rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+}
+.songDetailContainer .progressControl .barControl {
+  position: relative;
+  width: 450rpx;
+  height: 4rpx;
+  background: rgba(0, 0, 0, 0.4);
+  margin: auto;
+}
+.songDetailContainer .progressControl .barControl .audio-currentTime-Bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 4rpx;
+  background: red;
+}
+.songDetailContainer .progressControl .barControl .audio-currentTime-Bar .audio-circle {
+  position: absolute;
+  right: -12rpx;
+  top: -4rpx;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #fff;
+}
+.songDetailContainer .musicControl {
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+.songDetailContainer .musicControl .big {
+  font-size: 80rpx;
+}
+.songDetailContainer .musicControl text {
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 50rpx;
+}
+.hide {
+  display: none;
+}
+.active {
+  color: #e60012;
+}
+.showAlertContainer {
+  position: absolute;
+  top: -40rpx;
+  bottom: 0rpx;
+  width: 100%;
+  z-index: 99;
+  background-color: transparent;
+}
+.showAlertContainer .swiperIt {
+  height: 100%;
+  position: relative;
+}
+.showAlertContainer .swiperIt .dqbf {
+  position: absolute;
+  margin-top: 390rpx;
+  border-radius: 25rpx;
+  background-color: #2e2e2e;
+}
+.showAlertContainer .swiperIt .dqbf .title {
+  float: left;
+  padding: 20rpx 30rpx;
+  font-weight: bold;
+  font-family: "苹方";
+  color: #fff;
+  font-size: 35rpx;
+}
+.showAlertContainer .swiperIt .dqbf .title .digtail {
+  font-size: small;
+  color: #7f7f7f;
+}
+.showAlertContainer .swiperIt .dqbf .musicItem {
+  height: 1000rpx;
+}
+.showAlertContainer .swiperIt .dqbf .musicItem .muitem {
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+.showAlertContainer .swiperIt .dqbf .musicItem .muitem .name {
+  font-size: small;
+}
+.showAlertContainer .swiperIt .dqbf .musicItem .muitem .iconfont {
+  float: right;
+}

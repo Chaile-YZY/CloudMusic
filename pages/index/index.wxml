@@ -1,0 +1,63 @@
+<!-- index.wxml -->
+<view class="indexContainer">
+  <!-- 轮播图 -->
+  <swiper class="banners" indicator-dots="true" indicator-color="ivory" indicator-active-color="#A3BBDB">
+    <swiper-item wx:for="{{bannerList}}" wx:key='bannerId' wx:for-item="BannerItem">
+      <image src="{{BannerItem.pic}}" mode="" />
+    </swiper-item>
+  </swiper>
+  <!-- 图标导航 -->
+  <view class="NavContainer">
+    <view class="Navitem" bindtap="ToRecommand">
+      <text class="iconfont icon-tuijiange"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="Navitem">
+      <text class="iconfont icon-gedan"></text>
+      <text>歌单</text>
+    </view>
+    <view class="Navitem">
+      <text class="iconfont icon-paihangbang"></text>
+      <text>排行榜</text>
+    </view>
+    <view class="Navitem">
+      <text class="iconfont icon-diantai1"></text>
+      <text>电台</text>
+    </view>
+    <view class="Navitem">
+      <text class="iconfont icon-zhibo"></text>
+      <text>直播</text>
+    </view>
+  </view>
+  <!-- 推荐歌曲 -->
+  <view class="recommendContainer">
+    <NavHeader title="推荐歌单"></NavHeader>
+    <scroll-view class="recommendScorll" enable-flex="true" scroll-x="true">
+      <view class="scrollItem" wx:for="{{recommandList}}" wx:key='id' wx:for-item="RecommandItem">
+        <image src="{{RecommandItem.picUrl}}" alt=""></image>
+        <text>{{RecommandItem.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 排行榜区域 -->
+  <view class="TopList">
+    <!-- 头部区域 -->
+    <NavHeader title="排行榜"></NavHeader>
+    <!-- 内容区域 -->
+    <swiper class="TopListSwiper" circular="{{true}}" next-margin="50rpx" previous-margin="50rpx">
+      <swiper-item wx:for="{{TopList}}" wx:key="name" wx:for-item="ToItem">
+        <view class="swiperItem">
+          <view class="title">{{ToItem.name}}</view>
+          <view class="musicItem" wx:for="{{ToItem.tracks}}" wx:key="id" wx:for-item="MusicItem">
+            <image src="{{MusicItem.al.picUrl}}" />
+            <text class="Count">{{index+1}}</text>
+            <view class="TextStyle">
+              <text class="musicName">{{MusicItem.name}}</text>
+              <text class="SingerName">{{MusicItem.ar[0].name}}</text>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
