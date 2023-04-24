@@ -5,7 +5,7 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    filter: blur(30rpx)brightness(80%);
+    filter: blur(30rpx)brightness(50%);
     z-index: -1;
 }
 
@@ -94,34 +94,17 @@
         height: 80rpx;
         line-height: 80rpx;
         display: flex;
+        color: #b2b6b6;
+        text-align: center;
 
-        .barControl {
-            position: relative;
-            width: 450rpx;
-            height: 4rpx;
-            background: rgba(0, 0, 0, 0.4);
-            margin: auto;
-
-            .audio-currentTime-Bar {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 1;
-                height: 4rpx;
-                background: red;
-
-                .audio-circle {
-                    position: absolute;
-                    right: -12rpx;
-                    top: -4rpx;
-                    width: 12rpx;
-                    height: 12rpx;
-                    border-radius: 50%;
-                    background: #fff;
-                }
-            }
+        .flex-center {
+            flex-basis: 90rpx;
         }
 
+        .bar {
+            width: 450rpx;
+            flex: 1;
+        }
     }
 
     .musicControl {
@@ -152,7 +135,7 @@
 }
 
 .active {
-    color: #e60012;
+    color: red;
 }
 
 .showAlertContainer {
@@ -189,6 +172,7 @@
 
             .musicItem {
                 height: 1000rpx;
+                color: #fff;
 
                 .muitem {
                     font-size: 30rpx;
@@ -197,7 +181,6 @@
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    color: #fff;
 
                     .name {
                         font-size: small;

@@ -97,9 +97,8 @@ Page({
     wx.navigateTo({
       // 不能直接将song对象作为参数传递，长度过长，会被自动截取掉
       // url: '/pages/songDetail/songDetail?songPackage=' + JSON.stringify(songPackage)
-      url: '/pages/songDetail/songDetail?musicId=' + song.id
+      url: '/pages/songDetail/songDetail?musicId=' + song.id,
     })
-    console.log(song.id);
   },
 
   /**

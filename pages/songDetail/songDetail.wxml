@@ -9,15 +9,10 @@
         <image class="arimg" src="{{picUrl}}"></image>
     </view>
     <!-- 进度条 -->
-    <view class="progressControl">
-        <text>{{currentTime}}</text>
-        <!-- 总进度条 -->
-        <view class="barControl">
-            <view class="audio-currentTime-Bar" style="width: {{currentWidth + 'rpx'}}">
-                <view class="audio-circle"></view>
-            </view>
-        </view>
-        <text>{{durationTime}}</text>
+    <view class="progressControl" style="color:white;">
+        <view class="flex-center">{{currentTime}}</view>
+        <slider class='bar' bindchange="sliderChange" min="0" max="{{duration}}" disabled="{{true}}" value="{{slide_value}}" min='0' max='{{duration}}' activeColor="#a3bbdb" block-size="12" block-color="#a3bbdb" />
+        <view class="flex-center">{{durationTime}}</view>
     </view>
     <!-- 底部控制播放区域 -->
     <view class="musicControl">
@@ -36,10 +31,10 @@
                 <text class="digtail">({{length}})</text>
             </view>
             <scroll-view class="musicItem" scroll-y="{{true}}">
-                <view class="muitem" wx:for="{{list}}" wx:key="id" data-index="{{index}}" catchtap="change">
-                    {{item.name}}-
-                    <text class="name">{{item.singer}}</text>
-                    <text class="iconfont  icon-shanchu"></text>
+                <view wx:for="{{list}}" class="muitem {{index==currentId ? 'active':''}}" wx:key="id" data-index="{{index}}" catchtap="change">
+                    {{item.name}} -
+                    <text class="name {{musicId==item.id ? 'active':''}}">{{item.singer}}</text>
+                    <text class="iconfont icon-shanchu"></text>
                 </view>
             </scroll-view>
         </swiper-item>

@@ -5,7 +5,7 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  filter: blur(30rpx) brightness(80%);
+  filter: blur(30rpx) brightness(50%);
   z-index: -1;
 }
 .songDetailContainer {
@@ -83,30 +83,15 @@
   height: 80rpx;
   line-height: 80rpx;
   display: flex;
+  color: #b2b6b6;
+  text-align: center;
 }
-.songDetailContainer .progressControl .barControl {
-  position: relative;
+.songDetailContainer .progressControl .flex-center {
+  flex-basis: 90rpx;
+}
+.songDetailContainer .progressControl .bar {
   width: 450rpx;
-  height: 4rpx;
-  background: rgba(0, 0, 0, 0.4);
-  margin: auto;
-}
-.songDetailContainer .progressControl .barControl .audio-currentTime-Bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 4rpx;
-  background: red;
-}
-.songDetailContainer .progressControl .barControl .audio-currentTime-Bar .audio-circle {
-  position: absolute;
-  right: -12rpx;
-  top: -4rpx;
-  width: 12rpx;
-  height: 12rpx;
-  border-radius: 50%;
-  background: #fff;
+  flex: 1;
 }
 .songDetailContainer .musicControl {
   position: absolute;
@@ -130,7 +115,7 @@
   display: none;
 }
 .active {
-  color: #e60012;
+  color: red;
 }
 .showAlertContainer {
   position: absolute;
@@ -164,6 +149,7 @@
 }
 .showAlertContainer .swiperIt .dqbf .musicItem {
   height: 1000rpx;
+  color: #fff;
 }
 .showAlertContainer .swiperIt .dqbf .musicItem .muitem {
   font-size: 30rpx;
@@ -172,7 +158,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #fff;
 }
 .showAlertContainer .swiperIt .dqbf .musicItem .muitem .name {
   font-size: small;
