@@ -17,6 +17,8 @@ Page({
         recommendList: [],
         index: 0,//传入数据的musicId下标
         currentId: 0,//音乐下标
+        value: 0,
+        maxValue: 0,
         currentTime: '00:00',  // 实时时间
         durationTime: '00:00', // 总时长
         currentWidth: 0, // 实时进度条的宽度
@@ -89,7 +91,11 @@ Page({
             this.BackgroundAudioManager.stop();
             PubSub.subscribe('musicId', (msg, musicId) => {
                 // console.log(musicId);
-
+                let index = this.data.recommendList.findIndex(x => x.id == parseInt(musicId));
+                this.setData({
+                    index: index,
+                    currentId: index,
+                })
                 // 获取音乐详情信息
                 this.getMusicInfo(musicId);
                 // 自动播放当前的音乐
@@ -100,7 +106,7 @@ Page({
             PubSub.publish('switchType', 'next')
             // 将实时进度条的长度还原成 0；时间还原成 0；
             this.setData({
-                currentWidth: 0,
+                value: 0,
                 currentTime: '00:00',
             })
         });
@@ -110,13 +116,11 @@ Page({
             // console.log('总时长: ', this.backgroundAudioManager.duration);
             // console.log('实时的时长: ', this.backgroundAudioManager.currentTime);
             // 格式化实时的播放时间
-            let duration = this.BackgroundAudioManager.duration;
             let currentTime = moment(this.BackgroundAudioManager.currentTime * 1000).format('mm:ss');
-            let currentWidth = this.BackgroundAudioManager.currentTime / this.BackgroundAudioManager.duration * 450;
             this.setData({
-                currentTime,
-                currentWidth,
-                duration,
+                currentTime: currentTime,
+                value: this.BackgroundAudioManager.currentTime,
+                maxValue: this.BackgroundAudioManager.duration,
             })
         })
     },
@@ -198,14 +202,8 @@ Page({
     },
     sliderChange(e) {
         console.log(e.detail.value);
-        // this.BackgroundAudioManager.pause();
-        // this.BackgroundAudioManager.seek(e.detail.value);
-        // this.setData({
-        //     currentWidth: this.moment(e.detail.value)
-        // })
-        // setTimeout(() => {
-        //     this.BackgroundAudioManager.play();
-        // }, 3000);
+        let time = e.detail.value;
+        this.BackgroundAudioManager.seek(time);
     },
     // 点击切歌的回调
     handleSwitch(event) {

@@ -11,7 +11,7 @@
     <!-- 进度条 -->
     <view class="progressControl" style="color:white;">
         <view class="flex-center">{{currentTime}}</view>
-        <slider class='bar' bindchange="sliderChange" min="0" max="{{duration}}" disabled="{{true}}" value="{{slide_value}}" min='0' max='{{duration}}' activeColor="#a3bbdb" block-size="12" block-color="#a3bbdb" />
+        <slider class='bar' bindchange="sliderChange" value="{{value}}" min='0' max="{{maxValue}}" activeColor="#aed0ee" block-size="12" block-color="#a3bbdb" />
         <view class="flex-center">{{durationTime}}</view>
     </view>
     <!-- 底部控制播放区域 -->
