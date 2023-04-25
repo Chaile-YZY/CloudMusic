@@ -1,0 +1,128 @@
+.searchContainer {
+  padding: 0 20rpx;
+}
+
+.searchContainer .header {
+  display    : flex;
+  height     : 60rpx;
+  line-height: 60rpx;
+  padding    : 10rpx 0;
+}
+
+.searchContainer .header .searchInput {
+  position     : relative;
+  flex         : 1;
+  background   : rgba(237, 237, 237, 0.3);
+  border-radius: 30rpx;
+}
+
+.searchContainer .header .searchInput input {
+  margin-left: 50rpx;
+  height     : 60rpx;
+}
+
+.searchContainer .header .searchInput .placeholder {
+  font-size: 28rpx;
+}
+
+.searchContainer .header .searchInput .iconfont {
+  position: absolute;
+  left    : 15rpx;
+}
+
+.searchContainer .header .searchInput .clear {
+  position : absolute;
+  right    : 30rpx;
+  z-index  : 10;
+  top      : 0;
+  font-size: 30rpx;
+}
+
+.searchContainer .header .cancel {
+  width     : 100rpx;
+  text-align: center;
+}
+
+.searchContainer .showSearchContent .searchContent {
+  color        : #e60012;
+  height       : 80rpx;
+  line-height  : 80rpx;
+  font-size    : 24rpx;
+  border-bottom: 1px solid #e60012;
+}
+
+.searchContainer .showSearchContent .searchList .searchItem {
+  height     : 80rpx;
+  line-height: 80rpx;
+  display    : flex;
+}
+
+.searchContainer .showSearchContent .searchList .searchItem .content {
+  flex         : 1;
+  margin-left  : 20rpx;
+  border-bottom: 1px solid #eee;
+  font-size    : 26rpx;
+}
+
+.searchContainer .history {
+  position   : relative;
+  display    : flex;
+  flex-wrap  : wrap;
+  line-height: 50rpx;
+  margin     : 20rpx 0;
+}
+
+.searchContainer .history .title {
+  font-size: 28rpx;
+  height   : 50rpx;
+}
+
+.searchContainer .history .historyItem {
+  height          : 50rpx;
+  font-size       : 26rpx;
+  background-color: #ededed;
+  margin-left     : 20rpx;
+  padding         : 0 30rpx;
+  border-radius   : 20rpx;
+  margin-bottom   : 20rpx;
+}
+
+.searchContainer .history .iconfont {
+  position : absolute;
+  bottom   : 10rpx;
+  right    : 15rpx;
+  font-size: 36rpx;
+}
+
+.searchContainer .hotContainer {
+  margin-top: 30rpx;
+}
+
+.searchContainer .hotContainer .title {
+  font-size    : 28rpx;
+  height       : 80rpx;
+  line-height  : 80rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.searchContainer .hotContainer .hotlist {
+  display  : flex;
+  flex-wrap: wrap;
+}
+
+.searchContainer .hotContainer .hotlist .hotItem {
+  width      : 50%;
+  height     : 80rpx;
+  line-height: 80rpx;
+  font-size  : 26rpx;
+}
+
+.searchContainer .hotContainer .hotlist .hotItem .order {
+  margin: 0 10rpx;
+}
+
+.searchContainer .hotContainer .hotlist .hotItem .iconImg {
+  width      : 35rpx;
+  height     : 20rpx;
+  margin-left: 10rpx;
+}

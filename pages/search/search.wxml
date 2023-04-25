@@ -1,10 +1,44 @@
-<!--pages/search/search.wxml-->
+<!-- pages/search/search.wxml -->
 <view class="searchContainer">
     <view class="header">
         <view class="searchInput">
-            <text class="iconfont"></text>
-            <input type="text" placeholder="搜索歌曲" placeholder-class="placeholder">
+            <text class="iconfont  icon-sousuo2"></text>
+            <input type="text" value="{{searchContent}}" placeholder="{{placeholderContent}}" placeholder-class="placeholder" bindinput="HandleInputChange"></input>
+            <text class="clear" bindtap="clearSearchContent" hidden="{{!searchContent}}">x</text>
         </view>
-        <text class="cancel">取消</text>
+        <text class="cancel" bindtap="cancel">取消</text>
     </view>
+    <block wx:if="{{searchList.length}}">
+        <!-- 展示搜索内容 -->
+        <view class="showSearchContent">
+            <view class="searchContent">搜索内容:{{searchContent}}</view>
+            <view class="searchList">
+                <view class="searchItem" wx:for="{{searchList}}" wx:key="id">
+                    <text class="iconfont  icon-sousuo2"></text>
+                    <text class="content">{{item.name}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="history" wx:if="{{historyList.length}}">
+            <!-- search-record -->
+            <view class="title">历史</view>
+            <view class="historyItem" wx:for="{{historyList}}" wx:key="{{item}}">{{item}}</view>
+            <!-- delete -->
+            <text class="iconfont  icon-shanchu1" bindtap="deleteSearchHistory"></text>
+        </view>
+        <!-- 热搜榜 -->
+        <view class="hotContainer">
+            <view class="title">热搜榜</view>
+            <!-- 热搜列表 -->
+            <view class="hotlist">
+                <view class="hotItem" wx:for="{{hotList}}" wx:key="searchWord">
+                    <text class="order">{{index+1}}</text>
+                    <text>{{item.searchWord}}</text>
+                    <image class="iconImg" wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}"></image>
+                </view>
+            </view>
+        </view>
+    </block>
 </view>
