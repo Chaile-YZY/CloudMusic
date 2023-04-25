@@ -1,4 +1,5 @@
 ﻿# CloudMusic
+ 本项目仅供学习与参考，不得用于商业用途！！！
  1.本项目是一个音乐播放器类型的微信小程序，在结合硅谷云音乐的基础上优化并实现了部分功能如下:
    在音乐播放界面增加播放列表按钮并展示，
    播放列表动态显示正在播放歌曲的标题颜色，
@@ -13,7 +14,6 @@
    用户界面显示最近播放单曲
   3.本项目使用 网易云音乐 NodeJS 版 API作为项目数据接口，接口地址https://github.com/Binaryify/NeteaseCloudMusicApi，
   视频学习教程参考B站尚硅谷 硅谷云音乐 视频链接：https://www.bilibili.com/video/BV12K411A7A2/?spm_id_from=333.337.search-card.all.click
-   本项目仅供学习使用！！！
    
  
  
