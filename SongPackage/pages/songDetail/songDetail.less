@@ -87,6 +87,31 @@
         }
     }
 
+    .islrcContainer {
+        width: 750rpx;
+        height: 300rpx;
+        overflow: hidden;
+        position: absolute;
+        top: calc(50%-330rpx);
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .item {
+            line-height: 60rpx;
+            font-size: 25rpx;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .item-active {
+            font-size: 35rpx;
+            color: rgba(0, 0, 0, 0.904);
+            font-weight: 900;
+        }
+    }
+
     .progressControl {
         position: absolute;
         bottom: 200rpx;

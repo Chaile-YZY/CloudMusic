@@ -8,6 +8,33 @@
         <image class="disc" src="/static/images/song/disc.png"></image>
         <image class="arimg" src="{{picUrl}}"></image>
     </view>
+    <!-- 歌词 -->
+    <view wx:else class="islrcContainer" bind:tap="isLrc">
+        <scroll-view class="lysic">
+            <view class="item{{}}" wx:for="{{}}" wx:key="">{{item.lyric}}</view>
+        </scroll-view>
+    </view>
+    <!-- <view wx:else class="flex-1 flex-center z" bindtap="isLrc" style="position:relative;">
+        <view wx:if='{{isScroll}}' class="line flex-box" style="width:100%;color:white;border:1px solid rgba(244,244,244,0.2);">
+            <view style="margin:0rpx 20rpx;" class="f12 flex-center">{{locationShowTime}}</view>
+            <view class="flex-1" style="color:red;height:2rpx;width:100%;background:green;"></view>
+            <view style="margin:0rpx 20rpx;" class="flex-center">
+                <image src="../../images/play/locationTime.png" style="height:40rpx;width:40rpx;z-index:999;" catchtap="playScroll" />
+            </view>
+        </view>
+        <scroll-view scroll-y style="height:600rpx;" scroll-with-animation scroll-top="{{locationIndex*27}}" bindscroll="scroll" bindtouchstart="touchstart" bindtouchend="touchend">
+            <view style="height:284rpx;"></view>
+            <view wx:for="{{lrc}}" wx:key="index" class="f14" style="text-align:center;margin:20rpx 0rpx;color:#ccc;">
+                <text style="position: relative;">
+                    {{item}}
+                    <text wx:if="{{location===index}}" class="hover" style="animation: test {{timeLen}}s;">
+                        {{item}}
+                    </text>
+                </text>
+            </view>
+            <view style="height:300rpx;"></view>
+        </scroll-view>
+    </view> -->
     <!-- 进度条 -->
     <view class="progressControl" style="color:white;">
         <view class="flex-center">{{currentTime}}</view>
