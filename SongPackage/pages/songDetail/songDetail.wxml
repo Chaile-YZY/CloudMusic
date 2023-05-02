@@ -2,16 +2,29 @@
 <image class="background_img" src="{{picUrl}}" mode="scaleToFill"></image>
 <view class="songDetailContainer">
     <view class="author">{{singer}}</view>
-    <view class="circle"></view>
-    <image class="needle {{isPlay&&'needleRotate'}}" src="/static/images/song/needle.png"></image>
-    <view class="disContainer {{isPlay && 'discAnimation'}}">
-        <image class="disc" src="/static/images/song/disc.png"></image>
-        <image class="arimg" src="{{picUrl}}"></image>
+    <view class="imgbf" wx:if="{{islyric==false}}" bindtap="islrc">
+        <view class="circle"></view>
+        <image class="needle {{isPlay&&'needleRotate'}}" src="/static/images/song/needle.png"></image>
+        <view class="disContainer {{isPlay && 'discAnimation'}}">
+            <image class="disc" src="/static/images/song/disc.png"></image>
+            <image class="arimg" src="{{picUrl}}"></image>
+        </view>
     </view>
     <!-- 歌词 -->
-    <view wx:else class="islrcContainer" bind:tap="isLrc">
-        <scroll-view class="lysic">
-            <view class="item{{}}" wx:for="{{}}" wx:key="">{{item.lyric}}</view>
+    <view wx:if="{{islyric}}" class="islrcContainer" bindtap="islrc">
+        <view class="lysic" wx:if="{{isScroll}}">
+            <view class="time">{{locationShowTime}}</view>
+            <view class="flexone"></view>
+            <view class="flex-center">
+                <image src="../../../static/images/song/locationTime.png" catchtap="playScorll"></image>
+            </view>
+        </view>
+        <scroll-view class="scorllview" scroll-y="{{true}}" scroll-with-animation="{{true}}" scroll-top="{{lyricScrollTop}}" bindscroll="scroll" bindtouchstart="touchstart" bindtouchend="touchend">
+            <view class="t1"></view>
+            <view class="f14" wx:for="{{lyricList}}" wx:key="index">
+                <text class="item {{locationIndex===index?'hover':''}}">{{item.text}}</text>
+            </view>
+            <view class="t2"></view>
         </scroll-view>
     </view>
     <!-- <view wx:else class="flex-1 flex-center z" bindtap="isLrc" style="position:relative;">

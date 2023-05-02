@@ -9,6 +9,10 @@
     z-index: -1;
 }
 
+.hover {
+    color: red;
+}
+
 .songDetailContainer {
     position: relative;
     height: 100%;
@@ -16,101 +20,179 @@
     flex-direction: column;
     align-items: center;
 
+    .imgbf {
+        position: relative;
+
+        .circle {
+            position: absolute;
+            z-index: 100;
+            width: 60rpx;
+            height: 60rpx;
+            margin-top: 10rpx;
+            margin-left: 270rpx;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .needle {
+            position: absolute;
+            z-index: 99;
+            width: 192rpx;
+            height: 274rpx;
+            margin-top: 20px;
+            margin-left: 260rpx;
+            transform-origin: 40rpx 0;
+            transform: rotate(-20deg);
+            transition: transform 1s;
+        }
+
+        .needleRotate {
+            transform: rotate(0deg);
+        }
+
+
+        .discAnimation {
+            animation: disc 5s linear infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes disc {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .disContainer {
+            position: relative;
+            top: 200rpx;
+            width: 598rpx;
+            height: 598rpx;
+
+            .disc {
+                width: 598rpx;
+                height: 598rpx;
+            }
+
+            .arimg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                width: 370rpx;
+                height: 370rpx;
+                border-radius: 50%;
+            }
+        }
+    }
+
     .author {
+        color: #ebeee8;
         font-size: 30rpx;
         margin: 5px auto;
         font-family: "楷体";
     }
 
-    .circle {
-        position: relative;
-        z-index: 100;
-        width: 60rpx;
-        height: 60rpx;
-        border-radius: 50%;
-        background: #fff;
-        margin: 10rpx 0;
-    }
-
-    .needle {
-        position: relative;
-        z-index: 99;
-        left: 60rpx;
-        top: -40rpx;
-        width: 192rpx;
-        height: 274rpx;
-        transform-origin: 40rpx 0;
-        transform: rotate(-20deg);
-        transition: transform 1s;
-    }
-
-    .needleRotate {
-        transform: rotate(0deg);
-    }
-
-    .discAnimation {
-        animation: disc 5s linear infinite;
-        animation-delay: 1s;
-    }
-
-    @keyframes disc {
-        from {
-            transform: rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    .disContainer {
-        position: relative;
-        top: -170rpx;
-        width: 598rpx;
-        height: 598rpx;
-
-        .disc {
-            width: 598rpx;
-            height: 598rpx;
-        }
-
-        .arimg {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            margin: auto;
-            width: 370rpx;
-            height: 370rpx;
-            border-radius: 50%;
-        }
-    }
-
     .islrcContainer {
-        width: 750rpx;
-        height: 300rpx;
-        overflow: hidden;
-        position: absolute;
-        top: calc(50%-330rpx);
-        left: 50%;
-        transform: translate(-50%);
+        position: relative;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
+        flex: 1;
 
-        .item {
-            line-height: 60rpx;
-            font-size: 25rpx;
-            color: rgba(0, 0, 0, 0.5);
+        .lysic {
+            position: absolute;
+            top: 50%;
+            display: flex;
+            width: 100%;
+            color: #fff;
+            border: 1rpx solid rgba(224, 224, 224, 0.2);
+
+            .time {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12rpx;
+                margin: 0rpx 20rpx;
+            }
+
+            .flexone {
+                color: red;
+                height: 2rpx;
+                width: 100%;
+                background-color: cadetblue;
+                flex: 1;
+            }
+
+            .flex-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0rpx 20rpx;
+
+                image {
+                    height: 40rpx;
+                    width: 40rpx;
+                    z-index: 999;
+                }
+            }
         }
 
-        .item-active {
-            font-size: 35rpx;
-            color: rgba(0, 0, 0, 0.904);
-            font-weight: 900;
+        .scorllview {
+            height: 1000rpx;
+            margin-bottom: 150rpx;
+
+            .t1 {
+                height: 284rpx;
+            }
+
+            .f14 {
+                font-size: 30rpx;
+                text-align: center;
+                margin: 20rpx 0;
+                color: #ccc;
+
+                .item {
+                    position: relative;
+                }
+            }
+
+            .t2 {
+                height: 300rpx;
+            }
+
         }
     }
+
+    // .islrcContainer {
+    //     width: 750rpx;
+    //     height: 300rpx;
+    //     overflow: hidden;
+    //     position: absolute;
+    //     top: calc(50%-330rpx);
+    //     left: 50%;
+    //     transform: translate(-50%);
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+
+    //     .item {
+    //         line-height: 60rpx;
+    //         font-size: 25rpx;
+    //         color: rgba(0, 0, 0, 0.5);
+    //     }
+
+    //     .item-active {
+    //         font-size: 35rpx;
+    //         color: rgba(0, 0, 0, 0.904);
+    //         font-weight: 900;
+    //     }
+    // }
 
     .progressControl {
         position: absolute;
@@ -186,10 +268,11 @@
     .swiperIt {
         height: 100%;
         position: relative;
+        top: -30rpx;
 
         .dqbf {
             position: absolute;
-            margin-top: 390rpx;
+            margin-top: 430rpx;
             border-radius: 25rpx;
             background-color: #2e2e2e;
 

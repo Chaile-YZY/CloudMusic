@@ -24,7 +24,7 @@
         <view class="history" wx:if="{{historyList.length}}">
             <!-- search-record -->
             <view class="title">历史</view>
-            <view class="historyItem" wx:for="{{historyList}}" wx:key="{{item}}">{{item}}</view>
+            <view class="historyItem" wx:for="{{historyList}}" wx:key="item">{{item}}</view>
             <!-- delete -->
             <text class="iconfont  icon-shanchu1" bindtap="deleteSearchHistory"></text>
         </view>
