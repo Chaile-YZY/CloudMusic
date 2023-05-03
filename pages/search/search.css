@@ -60,7 +60,7 @@
   margin-top: 10rpx;
   border-radius: 20rpx;
   width: 100%;
-  height: calc(90vh);
+  height: calc(100vh - 10rpx);
   border: 1rpx solid #eee5e2;
 }
 .searchContainer .search_result_songs .search-title {

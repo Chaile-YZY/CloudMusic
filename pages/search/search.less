@@ -42,6 +42,10 @@
         }
     }
 
+    .header_view_hide {
+        display: none;
+    }
+
     .showSearchContent {
         .searchContent {
             color: #e60012;
@@ -73,8 +77,8 @@
         margin-top: 10rpx;
         border-radius: 20rpx;
         width: 100%;
-        height: 100%;
-        border: 1rpx solid #2c2f3b;
+        height: calc(100vh - 10rpx);
+        border: 1rpx solid #eee5e2;
 
         .search-title {
             margin-top: 10rpx;
@@ -112,25 +116,31 @@
         .search_result_song_item {
             margin: 15rpx;
             display: block;
+            border-bottom: 1px solid #bdcbd2;
 
             .search_song_name {
                 font-size: 30rpx;
+                font-weight: 700;
                 color: #2c2f3b;
                 margin-bottom: 15rpx;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
 
             .search_song_art-album {
                 font-size: 20rpx;
-                color: #2c2f3b;
+                font-weight: 500;
+                margin-bottom: 10rpx;
+                color: #000;
                 font-weight: lighter;
-                margin-bottom: 5rpx;
             }
 
             .textIcon {
                 margin-top: -80rpx;
                 float: right;
 
-                text {
+                .iconfont {
                     font-size: 40rpx;
                 }
             }

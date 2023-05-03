@@ -10,8 +10,11 @@ Page({
     placeholderContent: '',
     hotList: [],
     searchContent: '',
-    searchList: [],//模糊匹配的数据
+    searchSuggest: [], //搜索建议
+    searchList: [], //模糊匹配的数据
     historyList: [],
+    showSongResult: true,
+    showSearchResult: true,
   },
 
   /**
@@ -25,8 +28,8 @@ Page({
   },
   //获取初始化数据
   async getInitData() {
-    let placeholderData = await request('/search/default');//默认搜索关键词
-    let hotListData = await request('/search/hot/detail');//详细热搜列表
+    let placeholderData = await request('/search/default'); //默认搜索关键词
+    let hotListData = await request('/search/hot/detail'); //详细热搜列表
     this.setData({
       placeholderContent: placeholderData.data.showKeyword,
       hotList: hotListData.data,
@@ -51,6 +54,7 @@ Page({
       return
     }
     isSend = true;
+    this.getSearchSuggest();
     this.getSearchList();
     this.getSearchHistory();
     setTimeout(() => {
@@ -64,9 +68,16 @@ Page({
       })
       return;
     }
-    let { searchContent, historyList } = this.data;
+    let {
+      searchContent,
+      historyList
+    } = this.data;
     //获取关键字模糊匹配数据
-    let searchListData = await request('/search', { keywords: searchContent, limit: 10 });
+    let searchListData = await request('/search', {
+      keywords: searchContent,
+      limit: 50,
+      offset: 2,
+    });
     this.setData({
       searchList: searchListData.result.songs,
     })
@@ -79,6 +90,38 @@ Page({
       historyList: historyList,
     })
     wx.setStorageSync('searchHistory', historyList)
+  },
+  async getSearchSuggest() {
+    if (!this.data.searchContent) {
+      this.setData({
+        searchSuggest: []
+      })
+      return;
+    }
+    let searchContent = this.data.searchContent;
+    let searchSuggestData = await request('/search/suggest', {
+      keywords: searchContent,
+      type: 'mobile',
+    })
+    this.setData({
+      searchSuggest: searchSuggestData.result.allMatch
+    })
+  },
+  handlePlayAudio(e) {
+    const musicId = e.currentTarget.dataset.id;
+    this.setData({
+      musicId: musicId,
+    })
+    console.log('当前的musicId:' + musicId);
+    wx.navigateTo({
+      url: `/SongPackage/pages/songDetail/songDetail?musicId=${musicId}`,
+    })
+  },
+  showSearchResult() {
+    this.setData({
+      showSongResult: false,
+      showSearchResult: false,
+    })
   },
   clearSearchContent() {
     this.setData({
