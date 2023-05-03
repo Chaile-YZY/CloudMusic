@@ -19,6 +19,14 @@
                 </view>
             </view>
         </view>
+        <view class="{{showSearchResult?'header_view_hide':'search_result_songs'}}">
+            <view class="search-title">
+                <text class="songTitle">单曲</text>
+                <view class="openBox">
+                    <text class="iconfont icon-bofang">播放全部</text>
+                </view>
+            </view>
+        </view>
     </block>
     <block wx:else>
         <view class="history" wx:if="{{historyList.length}}">
